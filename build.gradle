@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.novoda.bintray-release'
 
 publish {
-    def lib_groupId = 'io.github.yingvickycao'
+    def lib_groupId = 'com.github.yingvickycao'
     def lib_artifactId = 'autils'
     def lib_publishVersion = '0.0.1'
 
@@ -12,7 +12,7 @@ publish {
     artifactId = lib_artifactId
     publishVersion = lib_publishVersion
     desc = 'android common util'
-    website = 'https://github.com/YingVickyCao/AUtils'
+    website = 'https://yingvickycao.github.io/AUtils/'
 }
 
 android {
