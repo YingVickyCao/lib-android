@@ -1,19 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
-
-publish {
-    def lib_groupId = 'com.github.yingvickycao'
-    def lib_artifactId = 'autils'
-    def lib_publishVersion = '0.0.1'
-
-    userOrg = "yingvickycao"
-    repoName = 'Autils'
-    groupId = lib_groupId
-    artifactId = lib_artifactId
-    publishVersion = lib_publishVersion
-    desc = 'android common util'
-    website = 'https://yingvickycao.github.io/AUtils/'
-}
 
 android {
     compileSdkVersion 29
@@ -59,3 +44,5 @@ dependencies {
 
     implementation "com.google.android.material:material:1.0.0"
 }
+
+apply from: 'publish.gradle'
