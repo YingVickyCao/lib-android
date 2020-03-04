@@ -6,7 +6,7 @@ import android.os.Message;
 // 使用handler实现简单的定时器，主线程每秒刷新UI
 public class TimerHandler extends Handler {
     private ITimerView mITimerView;
-    private static final int UPDATE_VIEW_EVERY_SECONDS = 1;
+    private static final int UPDATE_PROGRESS_EVERY_SECONDS = 1;
 
     public void setITimerView(ITimerView mITimerView) {
         this.mITimerView = mITimerView;
@@ -20,21 +20,21 @@ public class TimerHandler extends Handler {
     public void handleMessage(Message msg) {
         super.handleMessage(msg);
 
-        if (msg.what == UPDATE_VIEW_EVERY_SECONDS) {
+        if (msg.what == UPDATE_PROGRESS_EVERY_SECONDS) {
             handleMessage4UpdateView();
         }
     }
 
     private void handleMessage4UpdateView() {
-        removeMessages(UPDATE_VIEW_EVERY_SECONDS);
+        removeMessages(UPDATE_PROGRESS_EVERY_SECONDS);
 
         if (null != mITimerView) {
             mITimerView.updateView();
-            sendMessage4UpdateView();
+            sendMessage4Progress();
         }
     }
 
-    public void sendMessage4UpdateView(){
-        sendEmptyMessageDelayed(UPDATE_VIEW_EVERY_SECONDS, 1000);
+    public void sendMessage4Progress(){
+        sendEmptyMessageDelayed(UPDATE_PROGRESS_EVERY_SECONDS, 1000);
     }
 }
