@@ -1,11 +1,11 @@
-package com.hades.example.android.lib.mock;
+package com.hades.example.java.lib;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class DummyContent {
+public class DummyItems {
 
     /**
      * An array of sample (dummy) items.

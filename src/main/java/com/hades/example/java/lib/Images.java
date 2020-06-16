@@ -1,4 +1,4 @@
-package com.hades.example.android.lib.mock;
+package com.hades.example.java.lib;
 
 public class Images {
     public final static String[] imageUrls = new String[]{

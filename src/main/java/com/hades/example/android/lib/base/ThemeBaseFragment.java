@@ -2,27 +2,27 @@ package com.hades.example.android.lib.base;
 
 import android.app.TaskStackBuilder;
 
-import com.hades.example.android.lib.mock.SFMock;
+import com.hades.example.java.lib.MemoryCache;
 import com.hades.example.autils.R;
 
 public class ThemeBaseFragment extends BaseFragment {
 
     protected void setLightTheme() {
-        boolean isRedTheme = SFMock.getInstance().isRedTheme();
+        boolean isRedTheme = MemoryCache.getInstance().isRedTheme();
         if (isRedTheme) {
             return;
         }
-        SFMock.getInstance().useRedTheme(true);
+        MemoryCache.getInstance().useRedTheme(true);
 
         applyTheme();
     }
 
     protected void setDarkTheme() {
-        boolean isRedTheme = SFMock.getInstance().isRedTheme();
+        boolean isRedTheme = MemoryCache.getInstance().isRedTheme();
         if (!isRedTheme) {
             return;
         }
-        SFMock.getInstance().useRedTheme(false);
+        MemoryCache.getInstance().useRedTheme(false);
 
         applyTheme();
     }
@@ -33,7 +33,7 @@ public class ThemeBaseFragment extends BaseFragment {
     }
 
     protected void setTheme() {
-        boolean isLightTheme = SFMock.getInstance().isRedTheme();
+        boolean isLightTheme = MemoryCache.getInstance().isRedTheme();
         if (isLightTheme) {
             getActivity().setTheme(R.style.AppTheme_Light);
         } else {

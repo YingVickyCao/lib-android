@@ -1,14 +1,14 @@
-package com.hades.example.android.lib.mock;
+package com.hades.example.java.lib;
 
-public class SFMock {
+public class MemoryCache {
 
-    private static SFMock mInstance;
+    private static MemoryCache mInstance;
 
     private boolean mIsRedTheme;
 
-    public static SFMock getInstance() {
+    public static MemoryCache getInstance() {
         if (null == mInstance){
-            mInstance  = new SFMock();
+            mInstance  = new MemoryCache();
         }
         return mInstance;
     }

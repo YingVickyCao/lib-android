@@ -10,8 +10,10 @@ import androidx.annotation.Nullable;
 
 import com.hades.example.autils.R;
 import com.hades.example.android.lib.base.BaseFragment;
+import com.hades.example.java.lib.DummyItem;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class DummyContentFragment extends BaseFragment {
     public static final String TAG = DummyContentFragment.class.getSimpleName();
@@ -25,7 +27,7 @@ public class DummyContentFragment extends BaseFragment {
         DummyContentFragment fragment = new DummyContentFragment();
 
         Bundle data = new Bundle();
-        data.putParcelableArrayList(KEY_SEARCH_RESULT, list);
+        data.putSerializable(KEY_SEARCH_RESULT, list);
         fragment.setArguments(data);
         return fragment;
     }
@@ -37,7 +39,7 @@ public class DummyContentFragment extends BaseFragment {
         View view = inflater.inflate(R.layout.dummy_content, container, false);
 
         if (null != getArguments()) {
-            mList.addAll(getArguments().getParcelableArrayList(KEY_SEARCH_RESULT));
+            mList.addAll((Collection<? extends DummyItem>) getArguments().getSerializable(KEY_SEARCH_RESULT));
         }
         mListView = view.findViewById(R.id.listView);
 

@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.hades.example.autils.R;
+import com.hades.example.java.lib.DummyItem;
 
 import java.util.List;
 
