@@ -5,9 +5,9 @@ import android.graphics.Bitmap;
 import android.util.Log;
 
 import com.hades.example.android.lib.utils.FileUtil;
-import com.hades.example.autils.BuildConfig;
 import com.hades.example.android.lib.utils.bitmap.cache.disk.DiskCache;
 import com.hades.example.android.lib.utils.bitmap.cache.mememory.MemoryCache;
+import com.tbruyelle.rxpermissions.BuildConfig;
 
 import java.io.File;
 
