@@ -6,7 +6,7 @@ import android.util.Log;
 
 import com.hades.example.android.lib.utils.FileUtil;
 import com.hades.example.android.lib.utils.bitmap.cache.disk.DiskCache;
-import com.hades.example.android.lib.utils.bitmap.cache.mememory.MemoryCache;
+import com.hades.example.android.lib.utils.bitmap.cache.mememory.BitmapMemoryCache;
 import com.tbruyelle.rxpermissions.BuildConfig;
 
 import java.io.File;
@@ -21,12 +21,12 @@ public class ImageCacheParams {
     public static final String SDK_USER_AGENT = SDK_NAME + BuildConfig.VERSION_NAME;
     public static final int THREAD_STATS_TAG = SDK_NAME.hashCode();
 
-    public int memCacheSize = MemoryCache.DEFAULT_MEMORY_CACHE_KILOBYTES_SIZE;
+    public int memCacheSize = BitmapMemoryCache.DEFAULT_MEMORY_CACHE_KILOBYTES_SIZE;
     public int diskCacheSize = DiskCache.DEFAULT_DISK_CACHE_BYTES_SIZE;
     public File diskCacheDir;
     public Bitmap.CompressFormat compressFormat = DiskCache.DEFAULT_COMPRESS_FORMAT;
     public int compressQuality = ImageCache.DEFAULT_COMPRESS_QUALITY;
-    public boolean memoryCacheEnabled = MemoryCache.DEFAULT_MEMORY_CACHE_ENABLED;
+    public boolean memoryCacheEnabled = BitmapMemoryCache.DEFAULT_MEMORY_CACHE_ENABLED;
     public boolean diskCacheEnabled = DiskCache.DEFAULT_DISK_CACHE_ENABLED;
     public boolean initDiskCacheOnCreate = DiskCache.DEFAULT_INIT_DISK_CACHE_ON_CREATE;
 

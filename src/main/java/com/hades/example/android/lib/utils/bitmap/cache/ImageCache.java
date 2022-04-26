@@ -26,7 +26,7 @@ import android.util.Log;
 import androidx.fragment.app.FragmentManager;
 
 import com.hades.example.android.lib.utils.bitmap.cache.disk.DiskCache;
-import com.hades.example.android.lib.utils.bitmap.cache.mememory.MemoryCache;
+import com.hades.example.android.lib.utils.bitmap.cache.mememory.BitmapMemoryCache;
 import com.hades.example.android.lib.utils.bitmap.fetch.IInBitmapListener;
 import com.hades.example.android.lib.utils.bitmap.fetch.RetainImageCacheFragment;
 
@@ -35,7 +35,7 @@ public class ImageCache implements IInBitmapListener {
 
     public static final int DEFAULT_COMPRESS_QUALITY = 70;
 
-    MemoryCache mMemoryCache = new MemoryCache();
+    BitmapMemoryCache mBitmapMemoryCache = new BitmapMemoryCache();
     DiskCache mDiskCache = new DiskCache();
 
     private ImageCache(ImageCacheParams cacheParams) {
@@ -70,8 +70,8 @@ public class ImageCache implements IInBitmapListener {
     }
 
 
-    public MemoryCache getMemoryCache() {
-        return mMemoryCache;
+    public BitmapMemoryCache getMemoryCache() {
+        return mBitmapMemoryCache;
     }
 
     public DiskCache getDiskCache() {
@@ -86,7 +86,7 @@ public class ImageCache implements IInBitmapListener {
 
         if (cacheParams.memoryCacheEnabled) {
             Log.d(TAG, "Memory cache created (size = " + cacheParams.memCacheSize + ")");
-            mMemoryCache.init(cacheParams);
+            mBitmapMemoryCache.init(cacheParams);
         }
     }
 
@@ -94,12 +94,12 @@ public class ImageCache implements IInBitmapListener {
         if (data == null || value == null) {
             return;
         }
-        mMemoryCache.cacheBitmap(data, value);
+        mBitmapMemoryCache.cacheBitmap(data, value);
         mDiskCache.cacheBitmap(data, value);
     }
 
     public BitmapDrawable getBitmapFromMemoryCache(String url) {
-        BitmapDrawable memValue = mMemoryCache.getBitmapFromMemoryCache(url);
+        BitmapDrawable memValue = mBitmapMemoryCache.getBitmapFromMemoryCache(url);
         if (memValue != null) {
             Log.d(TAG, "Memory cache hit");
         }
@@ -113,11 +113,11 @@ public class ImageCache implements IInBitmapListener {
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
     public Bitmap getReusableBitmap4InBitmap(BitmapFactory.Options options) {
-        return mMemoryCache.getReusableBitmap4InBitmap(options);
+        return mBitmapMemoryCache.getReusableBitmap4InBitmap(options);
     }
 
     public void clearCache() {
-        mMemoryCache.clearCache();
+        mBitmapMemoryCache.clearCache();
         mDiskCache.clearCache();
     }
 

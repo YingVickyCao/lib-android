@@ -18,8 +18,8 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-public class MemoryCache {
-    private static final String TAG = MemoryCache.class.getSimpleName();
+public class BitmapMemoryCache {
+    private static final String TAG = BitmapMemoryCache.class.getSimpleName();
 
     public static final int DEFAULT_MEMORY_CACHE_KILOBYTES_SIZE = 1024 * 5; // 5MB
     public static final boolean DEFAULT_MEMORY_CACHE_ENABLED = true;

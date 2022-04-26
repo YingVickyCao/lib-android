@@ -1,6 +1,4 @@
 <resources>
-
-    <style name="Widget" />
     <style name="topic">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/size_topic</item>
@@ -10,25 +8,20 @@
     </style>
 
     <style name="btn">
-        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAllCaps">false</item>
-        <item name="android:layout_margin">@dimen/margin_tiny</item>
     </style>
 
-    <style name="btn.red">
-        <item name="android:background">@android:color/holo_red_light</item>
-    </style>
-
-    <style name="btn.small">
+    <style name="btn_small" parent="btn">
         <item name="android:layout_width">wrap_content</item>
     </style>
 
-    <style name="btn.small.red">
+    <style name="btn_small_red" parent="btn_small">
         <item name="android:background">@android:color/holo_red_light</item>
     </style>
 
-    <style name="btn.small.green">
+    <style name="btn_small_green" parent="btn_small">
         <item name="android:background">@android:color/holo_green_light</item>
     </style>
 
@@ -46,9 +39,13 @@
     <style name="div">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
-        <item name="android:background">@android:color/holo_red_dark</item>
+        <item name="android:background">@android:color/darker_gray</item>
         <item name="android:layout_marginTop">@dimen/margin_tiny</item>
         <item name="android:layout_marginBottom">@dimen/margin_tiny</item>
+    </style>
+
+    <style name="div.red">
+        <item name="android:background">@android:color/holo_red_light</item>
     </style>
 
     <style name="div.big">
@@ -58,8 +55,7 @@
     <style name="div.vertical">
         <item name="android:layout_width">1dp</item>
         <item name="android:background">@android:color/holo_red_dark</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_marginTop">@dimen/margin_small</item>
+        <item name="android:layout_height">24dp</item>
     </style>
 
     <style name="div.vertical.big">

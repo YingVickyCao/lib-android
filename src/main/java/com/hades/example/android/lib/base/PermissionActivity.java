@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -18,6 +19,24 @@ public class PermissionActivity extends BaseActivity {
 
     private static final int REQUEST_CODE_4_REQUEST_PERMISSIONS = 2000;
     protected View mRoot;
+
+    @Override
+    protected void initViews() {
+        super.initViews();
+    }
+
+    public void initViews(@IdRes int rootId) {
+        super.initViews();
+        if (isNeedCheckPermission()) {
+            if (findViewById(rootId) != null) {
+                setRoot(findViewById(rootId));
+                requestPermission();
+            } else {
+                Log.e(TAG, "initViews: root view is null");
+            }
+        }
+    }
+
 
     public void setRoot(View root) {
         mRoot = root;

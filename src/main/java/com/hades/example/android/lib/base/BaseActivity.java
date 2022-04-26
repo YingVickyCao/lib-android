@@ -25,9 +25,9 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (isNeedCheckPermission()) {
-            requestPermission();
-        }
+//        if (isNeedCheckPermission()) {
+//            requestPermission();
+//        }
     }
 
     protected void showActionBar() {
@@ -55,11 +55,17 @@ public class BaseActivity extends AppCompatActivity {
         return false;
     }
 
+    // TODO: 2022/4/26 refactor
     protected void initViews() {
         topic = findViewById(R.id.topic);
         mScrollView = findViewById(R.id.scrollView);
         mFragmentRoot = findViewById(R.id.fragmentRoot);
         showCurrentTest();
+    }
+
+    // TODO: 2022/4/26 refactor
+    protected void initViews(@IdRes int rootId) {
+        initViews();
     }
 
     protected void showCurrentTest() {
