@@ -1,4 +1,5 @@
 <resources>
+
     <style name="topic">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/size_topic</item>
@@ -14,11 +15,24 @@
     </style>
 
     <style name="btn_red" parent="btn">
-        <item name="android:background">@android:color/holo_red_light</item>
+        <item name="android:backgroundTint">@android:color/holo_red_light</item>
     </style>
 
     <style name="btn_green" parent="btn">
-        <item name="android:background">@android:color/holo_green_light</item>
+        <item name="android:backgroundTint">@android:color/holo_green_light</item>
+    </style>
+
+    <style name="btn_small" parent="btn">
+        <item name="android:layout_width">@dimen/size_50</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+
+    <style name="btn_small_red" parent="btn_small">
+        <item name="android:backgroundTint">@android:color/holo_red_light</item>
+    </style>
+
+    <style name="btn_small_green" parent="btn_small">
+        <item name="android:backgroundTint">@android:color/holo_green_light</item>
     </style>
 
     <style name="tv">
