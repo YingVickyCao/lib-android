@@ -13,15 +13,11 @@
         <item name="android:textAllCaps">false</item>
     </style>
 
-    <style name="btn_small" parent="btn">
-        <item name="android:layout_width">wrap_content</item>
-    </style>
-
-    <style name="btn_small_red" parent="btn_small">
+    <style name="btn_red" parent="btn">
         <item name="android:background">@android:color/holo_red_light</item>
     </style>
 
-    <style name="btn_small_green" parent="btn_small">
+    <style name="btn_green" parent="btn">
         <item name="android:background">@android:color/holo_green_light</item>
     </style>
 
