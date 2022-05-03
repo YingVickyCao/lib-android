@@ -35,9 +35,9 @@
 
         <!-- START,font       -->
         <!--        <item name="android:fontFamily">@font/consolaz</item>-->
-<!--                <item name="android:fontFamily">@font/consola</item>-->
+        <!--                <item name="android:fontFamily">@font/consola</item>-->
         <!--        <item name="fontFamily">@font/consolaz</item>-->
-<!--        <item name="fontFamily">@font/consola</item>-->
+        <!--        <item name="fontFamily">@font/consola</item>-->
         <!-- END,font       -->
     </style>
 
@@ -64,8 +64,8 @@
         <item name="link_0">@android:color/holo_blue_bright</item>
         <item name="link_0_active">@android:color/holo_red_light</item>
         <item name="textDisable">@android:color/darker_gray</item>
-
         <item name="warning">@android:color/holo_orange_light</item>
+        <item name="RequiredTextView_style">@style/RequiredTextView_light</item>
     </style>
 
     <style name="AppTheme.Dark">
@@ -84,12 +84,23 @@
         <item name="link_0">@android:color/holo_blue_dark</item>
         <item name="link_0_active">@android:color/holo_red_dark</item>
         <item name="textDisable">@android:color/black</item>
-<!--        <item name="warning">@android:color/holo_red_dark</item>-->
+        <item name="warning">@android:color/holo_red_dark</item>
+        <item name="RequiredTextView_style">@style/RequiredTextView_dark</item>
     </style>
     <!-- APPLY_THEME_END -->
 
     <style name="MyView">
         <item name="bgColor">?attr/m_0_with_opacity</item>
         <!--<item name="bgColor">@android:color/holo_orange_dark</item>-->
+    </style>
+
+    <style name="RequiredTextView_dark">
+        <item name="prefix">*</item>
+        <item name="prefix_color">@android:color/holo_red_dark</item>
+    </style>
+
+    <style name="RequiredTextView_light">
+        <item name="prefix">*</item>
+        <item name="prefix_color">@android:color/holo_red_light</item>
     </style>
 </resources>
