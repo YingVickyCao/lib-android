@@ -1,6 +1,8 @@
 package com.hades.example.android.lib.utils;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.util.Log;
 import android.util.TypedValue;
 
 public class ThemeUtils {
@@ -24,5 +26,36 @@ public class ThemeUtils {
         TypedValue tv = new TypedValue();
         context.getTheme().resolveAttribute(attrResId, tv, true);
         return tv.data;
+    }
+
+    /**
+     * 将颜色整数转换为十六进制字符串
+     *
+     * @param color (1) 0x80FF0000 -> #ff0000
+     *              (2) 0xFF00FF00 -> #00ff00
+     * @return
+     */
+    public static String convertIntColorToSting_RGB(int color) {
+        return String.format("#%06x", (0xFFFFFF & color));
+    }
+
+    /**
+     * 将颜色整数转换为十六进制字符串
+     *
+     * @param color (1) 0x80FF0000 -> #80ff0000
+     *              (2) 0xFF00FF00 -> #ff00ff00
+     * @return
+     */
+    public static String convertIntColorToSting_ARGB(int color) {
+        return ("#" + Integer.toHexString(color));
+    }
+
+    /**
+     * @param color (1) #80ff0000 -> 0x80FF0000
+     *              (2) #ff00ff00 -> 0xFF00FF00
+     * @return
+     */
+    public static int convertStringColorToInt(String color) {
+        return Color.parseColor(color);
     }
 }

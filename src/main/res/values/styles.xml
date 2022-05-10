@@ -23,7 +23,6 @@
     </style>
 
     <style name="btn_small" parent="btn">
-        <item name="android:layout_width">@dimen/size_50</item>
         <item name="android:textSize">@dimen/text_size_small</item>
     </style>
 

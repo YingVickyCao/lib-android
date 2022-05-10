@@ -45,6 +45,7 @@
     <dimen name="size_150">150dp</dimen>
     <dimen name="size_200">200dp</dimen>
     <dimen name="size_300">300dp</dimen>
+    <dimen name="size_400">400dp</dimen>
     <dimen name="size_300_px">300px</dimen>
 
     <!-- 水平间距的默认值 -->
