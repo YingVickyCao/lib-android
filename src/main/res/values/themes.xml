@@ -13,8 +13,8 @@
         <item name="color3">@android:color/holo_orange_dark</item>
         <item name="color4">@android:color/holo_green_light</item>
 
-        <item name="drawable1">@android:drawable/star_big_off</item>
-        <item name="drawable2">@android:drawable/star_big_on</item>
+        <item name="star_off">@android:drawable/star_big_off</item>
+        <item name="star_on">@android:drawable/star_big_on</item>
 
         <!-- change the activity background  -->
         <!--<item name="android:windowBackground">@color/colorAccent</item>-->

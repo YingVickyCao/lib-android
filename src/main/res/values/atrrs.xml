@@ -42,8 +42,8 @@
     <attr name="link_0" format="reference" />
     <attr name="link_0_active" format="reference" />
     <attr name="textDisable" format="reference" />
-    <attr name="drawable1" format="reference" />
-    <attr name="drawable2" format="reference" />
+    <attr name="star_off" format="reference" />
+    <attr name="star_on" format="reference" />
     <attr name="warning" format="reference" />
 
     <!-- Custom View,start -->

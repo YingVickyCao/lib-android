@@ -31,7 +31,8 @@ public class ThemeUtils {
     /**
      * 将颜色整数转换为十六进制字符串
      *
-     * @param color (1) 0x80FF0000 -> #ff0000
+     * @param color 0xAARRGGBB -> #RRGGBB
+     *              (1) 0x80FF0000 -> #ff0000
      *              (2) 0xFF00FF00 -> #00ff00
      * @return
      */
