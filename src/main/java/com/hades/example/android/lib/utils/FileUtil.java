@@ -5,13 +5,8 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Environment;
 import android.os.StatFs;
-import android.util.Log;
-
-import com.hades.example.autils.BuildConfig;
 
 import java.io.File;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 public class FileUtil {
     private static final String TAG = FileUtil.class.getSimpleName();
@@ -34,7 +29,7 @@ public class FileUtil {
     }
 
     // /sdcard/name
-    public static String buildFileNameInSD(String name){
+    public static String buildFileNameInSD(String name) {
         return Environment.getExternalStorageDirectory().getPath() + File.separator + name;
     }
 
@@ -59,38 +54,6 @@ public class FileUtil {
             return Environment.isExternalStorageRemovable();
         }
         return true;
-    }
-
-    public String bytesToHexString(byte[] bytes) {
-        // http://stackoverflow.com/questions/332079
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < bytes.length; i++) {
-            String hex = Integer.toHexString(0xFF & bytes[i]);
-            if (hex.length() == 1) {
-                sb.append('0');
-            }
-            sb.append(hex);
-        }
-        return sb.toString();
-    }
-
-    /**
-     * A hashing method that changes a string (like a URL) into a hash suitable for using as a
-     * disk filename.
-     */
-    public String hashKeyForDisk(String key) {
-        String cacheKey;
-        try {
-            final MessageDigest mDigest = MessageDigest.getInstance("MD5");
-            mDigest.update(key.getBytes());
-            cacheKey = bytesToHexString(mDigest.digest());
-        } catch (NoSuchAlgorithmException e) {
-            cacheKey = String.valueOf(key.hashCode());
-        }
-        if (BuildConfig.DEBUG) {
-            Log.d(TAG, "hashKeyForDisk: key=" + key + ",cacheKey=" + cacheKey);
-        }
-        return cacheKey;
     }
 
     public File getDiskCacheDir(Context context, String uniqueName) {
