@@ -22,13 +22,13 @@ public class BlockQuickTap {
         return isUserFastOperation(String.valueOf(btnId), clickDurationMs);
     }
 
-    public static boolean isUserFastOperation(String btnId, long clickDurationMs) {
+    public static boolean isUserFastOperation(String uniqueKey, long clickDurationMs) {
         long current = System.currentTimeMillis();
         long duration = current - lastClickTsOfBtn;
-        if ((lastBtnId.equalsIgnoreCase(btnId)) && (0 < duration) && (duration < clickDurationMs)) {
+        if ((lastBtnId.equalsIgnoreCase(uniqueKey)) && (0 < duration) && (duration < clickDurationMs)) {
             return true;
         }
-        lastBtnId = String.valueOf(btnId);
+        lastBtnId = String.valueOf(uniqueKey);
         lastClickTsOfBtn = current;
         return false;
     }
