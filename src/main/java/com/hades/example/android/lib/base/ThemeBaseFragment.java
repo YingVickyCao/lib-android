@@ -2,8 +2,8 @@ package com.hades.example.android.lib.base;
 
 import android.app.TaskStackBuilder;
 
+import com.hades.example.android.lib.R;
 import com.hades.example.java.lib.MemoryCache;
-import com.hades.example.autils.R;
 
 public class ThemeBaseFragment extends BaseFragment {
 

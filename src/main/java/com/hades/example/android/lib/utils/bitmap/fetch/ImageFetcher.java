@@ -9,12 +9,13 @@ import android.os.Build;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.hades.example.android.lib.BuildConfig;
+import com.hades.example.android.lib.R;
 import com.hades.example.android.lib.utils.FileUtil;
 import com.hades.example.android.lib.utils.ImageUtil;
 import com.hades.example.android.lib.utils.bitmap.cache.ImageCacheParams;
-import com.hades.example.autils.BuildConfig;
-import com.hades.example.autils.R;
 import com.hades.example.android.lib.utils.bitmap.cache.disk.DiskLruCache;
+import com.hades.example.java.lib.FileUtils;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -41,6 +42,7 @@ public class ImageFetcher extends ImageResize {
     private final Object mHttpDiskCacheLock = new Object();
 
     private FileUtil fileUtil = new FileUtil();
+    private FileUtils fileUtils = new FileUtils();
     private ImageUtil imageUtil = new ImageUtil();
 
     public ImageFetcher(Context context, int targetImageWidth, int targetImageHeight) {
@@ -163,7 +165,7 @@ public class ImageFetcher extends ImageResize {
             Log.d(TAG, "processBitmap4DownloadResize - " + data);
         }
 
-        final String key = fileUtil.hashKeyForDisk(data);
+        final String key = fileUtils.hashKeyForDisk(data);
         FileDescriptor fileDescriptor = null;
         FileInputStream fileInputStream = null;
         DiskLruCache.Snapshot snapshot;

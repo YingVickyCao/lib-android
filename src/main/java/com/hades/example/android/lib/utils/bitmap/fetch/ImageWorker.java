@@ -31,10 +31,10 @@ import android.widget.ImageView;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
+import com.hades.example.android.lib.BuildConfig;
 import com.hades.example.android.lib.utils.ImageUtil;
 import com.hades.example.android.lib.utils.bitmap.cache.ImageCache;
 import com.hades.example.android.lib.utils.bitmap.cache.ImageCacheParams;
-import com.hades.example.autils.BuildConfig;
 
 public abstract class ImageWorker implements IImageWorker {
     private static final String TAG = ImageWorker.class.getSimpleName();

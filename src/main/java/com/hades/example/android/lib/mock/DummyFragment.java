@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
-import com.hades.example.autils.R;
+import com.hades.example.android.lib.R;
 import com.hades.example.android.lib.base.BaseFragment;
 
 public class DummyFragment extends BaseFragment {

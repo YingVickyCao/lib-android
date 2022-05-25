@@ -4,11 +4,12 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.util.Log;
 
+import com.hades.example.android.lib.BuildConfig;
 import com.hades.example.android.lib.utils.FileUtil;
 import com.hades.example.android.lib.utils.ImageUtil;
 import com.hades.example.android.lib.utils.bitmap.cache.ImageCacheParams;
 import com.hades.example.android.lib.utils.bitmap.fetch.IInBitmapListener;
-import com.hades.example.autils.BuildConfig;
+import com.hades.example.java.lib.FileUtils;
 
 import java.io.File;
 import java.io.FileDescriptor;
@@ -32,6 +33,7 @@ public class DiskCache {
     private ImageCacheParams mCacheParams;
 
     FileUtil fileUtil = new FileUtil();
+    FileUtils fileUtils = new FileUtils();
     ImageUtil imageUtil = new ImageUtil();
 
     public void init(ImageCacheParams cacheParams) {
@@ -66,7 +68,7 @@ public class DiskCache {
     public void cacheBitmap(String data, BitmapDrawable value) {
         synchronized (mDiskCacheLock) {
             if (mDiskLruCache != null) {
-                final String key = fileUtil.hashKeyForDisk(data);
+                final String key = fileUtils.hashKeyForDisk(data);
                 OutputStream out = null;
                 try {
                     DiskLruCache.Snapshot snapshot = mDiskLruCache.get(key);
@@ -99,7 +101,7 @@ public class DiskCache {
     }
 
     public Bitmap getBitmap(String url, final IInBitmapListener memoryCache) {
-        final String key = fileUtil.hashKeyForDisk(url);
+        final String key = fileUtils.hashKeyForDisk(url);
         Bitmap bitmap = null;
 
         synchronized (mDiskCacheLock) {

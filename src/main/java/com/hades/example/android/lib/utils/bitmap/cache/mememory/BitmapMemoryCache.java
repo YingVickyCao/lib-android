@@ -7,10 +7,10 @@ import android.util.Log;
 
 import androidx.collection.LruCache;
 
+import com.hades.example.android.lib.BuildConfig;
 import com.hades.example.android.lib.utils.ImageUtil;
 import com.hades.example.android.lib.utils.VersionUtil;
 import com.hades.example.android.lib.utils.bitmap.cache.ImageCacheParams;
-import com.hades.example.autils.BuildConfig;
 
 import java.lang.ref.SoftReference;
 import java.util.Collections;

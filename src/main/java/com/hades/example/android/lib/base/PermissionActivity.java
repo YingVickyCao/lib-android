@@ -12,7 +12,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.google.android.material.snackbar.Snackbar;
-import com.hades.example.autils.R;
+import com.hades.example.android.lib.R;
 
 public class PermissionActivity extends BaseActivity {
     private static final String TAG = PermissionActivity.class.getSimpleName();

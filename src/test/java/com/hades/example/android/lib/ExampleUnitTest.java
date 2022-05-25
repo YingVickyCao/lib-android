@@ -1,4 +1,4 @@
-package com.hades.example.autils;
+package com.hades.example.android.lib;
 
 import org.junit.Test;
 
