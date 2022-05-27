@@ -4,32 +4,39 @@ import androidx.annotation.IdRes;
 
 public class BlockQuickTap {
 
-    private static String lastBtnId = "";
-    private static long lastClickTsOfBtn;
-    public static long MIN_CLICK_DELAY_MS_OF_BTN = 200;
+    private static String lastUniqueKey = "";
+    private static long lastTs;
 
-    public static long MIN_TIME_INTERVAL_OF_TO_SHOW_DIALOG = 500;
+    public static long MIN_DURATION_1 = 200;    // 0.2 秒
+    public static long MIN_DURATION_2 = 500;    // 0.5 秒
+    public static long MIN_DURATION_3 = 800;    // 0.5 秒
+    public static long MIN_DURATION_1_SECOND = 1000;   // 1 秒
+    public static long MIN_DURATION_2_SECOND = 2000;   // 2 秒
 
-    public static boolean isUserFastOperation() {
-        return isUserFastOperation(-1, MIN_CLICK_DELAY_MS_OF_BTN);
+    public static boolean isRepeatShowKeyboard() {
+        return isUserFastOperation(String.valueOf(-1), MIN_DURATION_1);
     }
 
-    public static boolean isUserFastOperation(@IdRes int btnId) {
-        return isUserFastOperation(btnId, MIN_CLICK_DELAY_MS_OF_BTN);
+    public static boolean isFastClickBtn(@IdRes int btnId) {
+        return isUserFastOperation(String.valueOf(btnId), MIN_DURATION_2_SECOND);
     }
 
-    public static boolean isUserFastOperation(@IdRes int btnId, long clickDurationMs) {
-        return isUserFastOperation(String.valueOf(btnId), clickDurationMs);
+    public static boolean isFastClickBtn() {
+        return isUserFastOperation(String.valueOf(-1), MIN_DURATION_2_SECOND);
     }
 
-    public static boolean isUserFastOperation(String uniqueKey, long clickDurationMs) {
+    public static boolean isRepeatShowDialog(String uniqueKey) {
+        return isUserFastOperation(uniqueKey, MIN_DURATION_1_SECOND);
+    }
+
+    public static boolean isUserFastOperation(String uniqueKey, long durationMs) {
         long current = System.currentTimeMillis();
-        long duration = current - lastClickTsOfBtn;
-        if ((lastBtnId.equalsIgnoreCase(uniqueKey)) && (0 < duration) && (duration < clickDurationMs)) {
+        long duration = current - lastTs;
+        if ((lastUniqueKey.equalsIgnoreCase(uniqueKey)) && (0 < duration) && (duration < durationMs)) {
             return true;
         }
-        lastBtnId = String.valueOf(uniqueKey);
-        lastClickTsOfBtn = current;
+        lastUniqueKey = String.valueOf(uniqueKey);
+        lastTs = current;
         return false;
     }
 }
