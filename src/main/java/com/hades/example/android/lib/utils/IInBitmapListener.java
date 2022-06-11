@@ -1,4 +1,4 @@
-package com.hades.example.android.lib.utils.bitmap.fetch;
+package com.hades.example.android.lib.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

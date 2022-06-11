@@ -8,8 +8,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.util.Log;
 
-import com.hades.example.android.lib.utils.bitmap.fetch.IInBitmapListener;
-
 import java.io.FileDescriptor;
 
 public class ImageUtil {
