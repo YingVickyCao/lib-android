@@ -2,7 +2,6 @@ package com.hades.example.android.lib.utils;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.util.Log;
 import android.util.TypedValue;
 
 public class ThemeUtils {
