@@ -1,4 +1,5 @@
 <resources>
+
     <style name="topic">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/size_topic</item>
@@ -38,6 +39,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_margin">@dimen/margin_tiny</item>
+        <item name="android:layout_gravity">center_horizontal</item>
     </style>
 
     <style name="tv.small">
