@@ -8,8 +8,8 @@ import android.os.StatFs;
 
 import java.io.File;
 
-public class FileUtil {
-    private static final String TAG = FileUtil.class.getSimpleName();
+public class AndroidStorageUtils {
+    private static final String TAG = AndroidStorageUtils.class.getSimpleName();
 
     /**
      * Get the external app cache directory.

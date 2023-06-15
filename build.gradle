@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdk rootProject.ext.compileSdkVersion
@@ -44,6 +45,9 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxandroid:${rootProject.ext.rxandroid2_version}"
 
     implementation "com.google.android.material:material:${rootProject.ext.material_version}"
+
+    implementation "com.google.code.gson:gson:2.10.1"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.8.22"
 }
 
 //apply from: 'publish.gradle'
