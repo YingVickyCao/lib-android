@@ -34,21 +34,22 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(path: ':JavaLib')
 
-    implementation "androidx.appcompat:appcompat:${rootProject.ext.appcompat_version}"
+    implementation libs.androidx.appcompat
+    implementation libs.google.gson
+    implementation libs.google.material
+    implementation(libs.thirdparty.rxpermissions) {
+        artifact {
+            type = 'aar'
+        }
+    }
+    implementation libs.thirdparty.rxjava2
+    implementation libs.thirdparty.rxandroid2
+    implementation libs.kotlin.stdlib
 
-    testImplementation "junit:junit:${rootProject.ext.junit_version}"
-    androidTestImplementation "androidx.test:runner:${rootProject.ext.testRunner_version}"
-    androidTestImplementation "androidx.test.espresso:espresso-core:${rootProject.ext.espressoCore_version}"
+    testImplementation libs.test.junit
 
-    implementation "com.tbruyelle.rxpermissions2:rxpermissions:${rootProject.ext.rxpermissions_version}"
-    //RxPermissions (required RxJava2)
-    implementation "io.reactivex.rxjava2:rxjava:${rootProject.ext.rxjava2_version}"
-    implementation "io.reactivex.rxjava2:rxandroid:${rootProject.ext.rxandroid2_version}"
-
-    implementation "com.google.android.material:material:${rootProject.ext.material_version}"
-
-    implementation "com.google.code.gson:gson:2.10.1"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.8.22"
+    androidTestImplementation libs.androidTest.junit
+    androidTestImplementation libs.androidTest.espressoCore
 }
 
 //apply from: 'publish.gradle'
