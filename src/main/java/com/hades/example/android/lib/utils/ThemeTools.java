@@ -4,6 +4,11 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class ThemeTools {
     public static void printTypedArray(String tag, TypedArray typedArray) {
         if (null == typedArray) {
@@ -45,5 +50,19 @@ public class ThemeTools {
             }
         }
         return null;
+    }
+
+    public static void getValuesFromAttributeSet(AttributeSet attrs, @NonNull Map<String, String> target) {
+        if (null == attrs) {
+            return;
+        }
+        int attributeCount = attrs.getAttributeCount();
+        for (int i = 0; i < attributeCount; i++) {
+            String attributeName = attrs.getAttributeName(i);
+            String attributeValue = attrs.getAttributeValue(i);
+            if (target.containsKey(attributeName)) {
+                target.put(attributeName, attributeValue);
+            }
+        }
     }
 }
