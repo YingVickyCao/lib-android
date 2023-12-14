@@ -25,6 +25,9 @@ android {
         sourceCompatibility rootProject.ext.sourceCompatibility
         targetCompatibility rootProject.ext.targetCompatibility
     }
+    buildFeatures {
+        buildConfig true
+    }
 }
 
 dependencies {
