@@ -4,11 +4,11 @@ apply plugin: 'kotlin-android'
 android {
     namespace 'com.hades.example.android.lib'
 
-    compileSdk rootProject.ext.compileSdkVersion
+    compileSdk rootProject.ext.compileSdk
 
     defaultConfig {
-        minSdk rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        minSdk rootProject.ext.minSdk
+        targetSdkVersion rootProject.ext.targetSdk
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
