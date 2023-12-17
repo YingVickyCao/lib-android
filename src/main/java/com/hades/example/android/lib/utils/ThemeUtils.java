@@ -3,6 +3,9 @@ package com.hades.example.android.lib.utils;
 import android.content.Context;
 import android.graphics.Color;
 import android.util.TypedValue;
+import android.widget.TextView;
+
+import androidx.annotation.DimenRes;
 
 public class ThemeUtils {
     /**
@@ -57,5 +60,35 @@ public class ThemeUtils {
      */
     public static int convertStringColorToInt(String color) {
         return Color.parseColor(color);
+    }
+
+    /**
+     * setTextSize(textView,R.dimen.text_size_30,context)
+     *
+     * @param textView
+     * @param testSize text size dimen resource
+     */
+    public static void setTextSize(TextView textView, @DimenRes int testSize, Context context) {
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getResources().getDimensionPixelSize(testSize));
+    }
+
+    /**
+     * setTextSizeUnitPx(textView,getResources().getDimensionPixelSize(R.dimen.text_size_30))
+     *
+     * @param textView
+     * @param size     px size
+     */
+    public static void setTextSizeUnitPx(TextView textView, float size) {
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, size);
+    }
+
+    /**
+     * setTextSizeUnitSp(textView,30);
+     *
+     * @param textView
+     * @param size     sp size
+     */
+    public static void setTextSizeUnitSp(TextView textView, float size) {
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, size);
     }
 }

@@ -3,6 +3,7 @@ package com.hades.example.android.lib.utils;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.util.TypedValue;
 
 import androidx.annotation.NonNull;
 
@@ -18,7 +19,9 @@ public class ThemeTools {
         Log.d(tag, "printTypedArray,typedArray.getIndexCount()=" + typedArray.getIndexCount());
         for (int i = 0; i < typedArray.getIndexCount(); i++) {
             int index = typedArray.getIndex(i);
-            Log.e(tag, "printTypedArray ,index=" + index);
+            TypedValue typedValue = new TypedValue();
+            typedArray.getValue(index, typedValue);
+            Log.e(tag, "printTypedArray ,index=" + index + ",type=" + typedArray.getType(index) + "," + typedValue.data);
         }
     }
 
