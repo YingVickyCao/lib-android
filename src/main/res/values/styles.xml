@@ -1,10 +1,13 @@
 <resources>
 
+<!-- The item's text contrast ratio is 3.72. This ratio is based on a text color of #8A000000 and background color of #77C353.
+Consider increasing this item's text contrast ratio to 4.50 or greater.   -->
     <style name="topic">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/size_topic</item>
         <item name="android:layout_gravity">center_horizontal</item>
-        <item name="android:background">#77c353</item>
+        <item name="android:background">#4CAF50</item>
+        <item name="android:textColor">#000</item>
         <item name="android:gravity">center</item>
     </style>
 
