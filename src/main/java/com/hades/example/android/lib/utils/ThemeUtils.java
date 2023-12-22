@@ -110,6 +110,11 @@ public class ThemeUtils {
         textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, size);
     }
 
+    public static Float px2dp(Context context, float pixels) {
+        final float density = context.getResources().getDisplayMetrics().density;
+        return pixels / density;
+    }
+
     public static int dp2px(Context ctx, float dpValue) {
         final float density = ctx.getResources().getDisplayMetrics().density;
         return (int) (dpValue * density + 0.5f);
