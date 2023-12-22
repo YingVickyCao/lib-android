@@ -86,8 +86,8 @@ public class ThemeUtils {
      * @param textView
      * @param testSize text size dimen resource
      */
-    public static void setTextSize(TextView textView, @DimenRes int testSize, Context context) {
-        textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getResources().getDimensionPixelSize(testSize));
+    public static void setTextSize(TextView textView, @DimenRes int testSize) {
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, textView.getContext().getResources().getDimensionPixelSize(testSize));
     }
 
     /**
